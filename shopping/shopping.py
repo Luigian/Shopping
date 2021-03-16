@@ -70,8 +70,41 @@ def load_data(filename):
     evidence.pop(0) 
     labels.pop(0) 
 
-    print(evidence)
-    print(labels)
+    ints = [0, 2, 4, 11, 12, 13, 14]
+    floats = [1, 3, 5, 6, 7, 8, 9]
+    months = ['Jan', 'Feb', 'Mar', 'Abr', 'May', 'June', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+    print(evidence[0])
+    for i in evidence[0]:
+        print(type(i))
+    print(labels[0])
+    print(type(labels[0]))
+
+    for i in ints:
+        evidence[0][i] = int(evidence[0][i])
+    for i in floats:
+        evidence[0][i] = float(evidence[0][i])
+    evidence[0][10] = int(months.index(evidence[0][10]))
+    if evidence[0][15] == 'Returning_Visitor':
+        evidence[0][15] = int(1)
+    else:    
+        evidence[0][15] = int(0)
+    if evidence[0][16] == 'TRUE':
+        evidence[0][16] = int(1)
+    else:    
+        evidence[0][16] = int(0)
+
+    if labels[0] == 'TRUE':   
+        labels[0] = int(1)
+    else:    
+        labels[0] = int(0)
+
+
+    print(evidence[0])
+    for i in evidence[0]:
+        print(type(i))
+    print(labels[0])
+    print(type(labels[0]))
 
     return (evidence, labels)
 
