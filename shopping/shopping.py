@@ -59,52 +59,37 @@ def load_data(filename):
     labels should be the corresponding list of labels, where each label
     is 1 if Revenue is true, and 0 otherwise.
     """
+    integers = [0, 2, 4, 11, 12, 13, 14]
+    floatings = [1, 3, 5, 6, 7, 8, 9]
+    months = ['Jan', 'Feb', 'Mar', 'Abr', 'May', 'June', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    
     evidence = []
     labels = []
-    
+
     f = open(filename)
     reader = csv.reader(f)
+    # x = 0
     for row in reader:
-        evidence.append(row[0:17])
-        labels.append(row[17])
-    evidence.pop(0) 
-    labels.pop(0) 
-
-    ints = [0, 2, 4, 11, 12, 13, 14]
-    floats = [1, 3, 5, 6, 7, 8, 9]
-    months = ['Jan', 'Feb', 'Mar', 'Abr', 'May', 'June', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
-    print(evidence[0])
-    for i in evidence[0]:
-        print(type(i))
-    print(labels[0])
-    print(type(labels[0]))
-
-    for i in ints:
-        evidence[0][i] = int(evidence[0][i])
-    for i in floats:
-        evidence[0][i] = float(evidence[0][i])
-    evidence[0][10] = int(months.index(evidence[0][10]))
-    if evidence[0][15] == 'Returning_Visitor':
-        evidence[0][15] = int(1)
-    else:    
-        evidence[0][15] = int(0)
-    if evidence[0][16] == 'TRUE':
-        evidence[0][16] = int(1)
-    else:    
-        evidence[0][16] = int(0)
-
-    if labels[0] == 'TRUE':   
-        labels[0] = int(1)
-    else:    
-        labels[0] = int(0)
+        if row[0] == 'Administrative':
+            continue
+        e = [0] * 17
+        for i in integers:
+            e[i] = int(row[i])
+        for i in floatings:
+            e[i] = float(row[i])
+        e[10] = int(months.index(row[10]))
+        e[15] = int(1) if row[15] == 'Returning_Visitor' else int(0)
+        e[16] = int(1) if row[16] == 'TRUE' else int(0)    
+        evidence.append(e)
+        l = int(1) if row[17] == 'TRUE' else int(0)
+        labels.append(l)
+        # x += 1
 
 
-    print(evidence[0])
-    for i in evidence[0]:
-        print(type(i))
-    print(labels[0])
-    print(type(labels[0]))
+    print(evidence[198])
+    print(labels[198])
+    # print(x)
+
 
     return (evidence, labels)
 
