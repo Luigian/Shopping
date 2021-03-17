@@ -68,7 +68,6 @@ def load_data(filename):
 
     f = open(filename)
     reader = csv.reader(f)
-    # x = 0
     for row in reader:
         if row[0] == 'Administrative':
             continue
@@ -83,13 +82,6 @@ def load_data(filename):
         evidence.append(e)
         l = int(1) if row[17] == 'TRUE' else int(0)
         labels.append(l)
-        # x += 1
-
-
-    print(evidence[198])
-    print(labels[198])
-    # print(x)
-
 
     return (evidence, labels)
 
