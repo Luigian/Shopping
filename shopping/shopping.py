@@ -22,13 +22,15 @@ def main():
     # Train model and make predictions
     model = train_model(X_train, y_train)
     predictions = model.predict(X_test)
-    sensitivity, specificity = evaluate(y_test, predictions)
+    # print(predictions)
+    # sys.exit()
+    # sensitivity, specificity = evaluate(y_test, predictions)
 
     # Print results
     print(f"Correct: {(y_test == predictions).sum()}")
     print(f"Incorrect: {(y_test != predictions).sum()}")
-    print(f"True Positive Rate: {100 * sensitivity:.2f}%")
-    print(f"True Negative Rate: {100 * specificity:.2f}%")
+    # print(f"True Positive Rate: {100 * sensitivity:.2f}%")
+    # print(f"True Negative Rate: {100 * specificity:.2f}%")
 
 
 def load_data(filename):
@@ -86,13 +88,14 @@ def load_data(filename):
     return (evidence, labels)
 
 
-
 def train_model(evidence, labels):
     """
     Given a list of evidence lists and a list of labels, return a
     fitted k-nearest neighbor model (k=1) trained on the data.
     """
-    raise NotImplementedError
+    model = KNeighborsClassifier(n_neighbors=1)
+    model.fit(evidence, labels)
+    return model
 
 
 def evaluate(labels, predictions):
