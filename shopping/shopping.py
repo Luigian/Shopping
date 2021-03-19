@@ -23,14 +23,13 @@ def main():
     model = train_model(X_train, y_train)
     predictions = model.predict(X_test)
     # print(predictions)
-    # sys.exit()
-    # sensitivity, specificity = evaluate(y_test, predictions)
+    sensitivity, specificity = evaluate(y_test, predictions)
 
     # Print results
     print(f"Correct: {(y_test == predictions).sum()}")
     print(f"Incorrect: {(y_test != predictions).sum()}")
-    # print(f"True Positive Rate: {100 * sensitivity:.2f}%")
-    # print(f"True Negative Rate: {100 * specificity:.2f}%")
+    print(f"True Positive Rate: {100 * sensitivity:.2f}%")
+    print(f"True Negative Rate: {100 * specificity:.2f}%")
 
 
 def load_data(filename):
@@ -113,8 +112,26 @@ def evaluate(labels, predictions):
     representing the "true negative rate": the proportion of
     actual negative labels that were accurately identified.
     """
-    raise NotImplementedError
-
+    positives = 0
+    true_positives = 0
+    negatives = 0
+    true_negatives = 0
+    
+    i = 0
+    while i < len(labels):
+        if labels[i] == 1:
+            positives += 1
+            if predictions[i] == 1:
+                true_positives += 1
+        else:
+            negatives += 1
+            if predictions[i] == 0:
+                true_negatives += 1
+        i += 1
+    
+    sensitivity = true_positives / positives 
+    specificity = true_negatives / negatives
+    return (sensitivity, specificity)
 
 if __name__ == "__main__":
     main()
