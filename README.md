@@ -12,8 +12,6 @@ How do we measure the accuracy of a system like this? If we have a testing data 
 
 Instead, we’ll measure two values: sensitivity (also known as the “true positive rate”) and specificity (also known as the “true negative rate”). Sensitivity refers to the proportion of positive examples that were correctly identified: in other words, the proportion of users who did go through with a purchase who were correctly identified. Specificity refers to the proportion of negative examples that were correctly identified: in this case, the proportion of users who did not go through with a purchase who were correctly identified. So our “always guess no” classifier from before would have perfect specificity (1.0) but no sensitivity (0.0). The goal was to build a classifier that performs reasonably on both metrics.
 
----------------------------------------------
-
 **Supervised Learning**
 
 Supervised learning is a task where a computer learns a function that maps inputs to outputs based on a dataset of input-output pairs.
@@ -34,7 +32,7 @@ Following the same strategy, the white dot should be colored red, because the ne
 
 One way to get around the limitations of nearest-neighbor classification is by using k-nearest-neighbors classification, where the dot is colored based on the most frequent color of the k nearest neighbors. It is up to the programmer to decide what k is. Using a 3-nearest neighbors classification, for example, the white dot above will be colored blue, which intuitively seems like a better decision.
 
-A drawback of the k-nearest-neighbors classification is that, using a naive approach, the algorithm will have to measure the distance of every single point to the point in question, which is computationally expensive. This can be sped up by using data structures that enable finding neighbors more quickly or by pruning irrelevant observation.
+A drawback of the k-nearest-neighbors classification is that, using a naive approach, the algorithm will have to measure the distance of every single point to the point in question, which is computationally expensive. This can be speed up by using data structures that enable finding neighbors more quickly or by pruning irrelevant observation.
 
 ----------------------------------------
 
