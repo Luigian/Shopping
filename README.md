@@ -34,7 +34,21 @@ One way to get around the limitations of nearest-neighbor classification is by u
 
 A drawback of the k-nearest-neighbors classification is that, using a naive approach, the algorithm will have to measure the distance of every single point to the point in question, which is computationally expensive. This can be speed up by using data structures that enable finding neighbors more quickly or by pruning irrelevant observation.
 
-----------------------------------------
+-------------------------------- checar inicia
+
+**scikit-learn**
+
+As often is the case with Python, there are multiple libraries that allow us to conveniently use machine learning algorithms. One of such libraries is scikit-learn.
+
+As an example, we are going to use a CSV dataset of counterfeit banknotes.
+
+The four left columns are data that we can use to predict whether a note is genuine or counterfeit, which is external data provided by a human, coded as 0 and 1. Now we can train our model on this data set and see if we can predict whether new banknotes are genuine or not.
+
+Note that after importing the libraries, we can choose which model to use. The rest of the code will stay the same. SVC stands for Support Vector Classifier (which we know as support vector machine). The KNeighborsClassifier uses the k-neighbors strategy, and requires as input the number of neighbors it should consider.
+
+This manual version of running the algorithm can be found in the source code for this lecture under banknotes0.py. Since the algorithm is used often in a similar way, scikit-learn contains additional functions that make the code even more succinct and easy to use, and this version can be found under banknotes1.py.
+
+---------------------------------------- checar termina
 
 ## Implementation
 
