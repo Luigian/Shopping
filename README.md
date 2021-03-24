@@ -98,15 +98,15 @@ We assume that the list of true labels will contain at least one positive label 
 
 * Inside the `shopping` directory: `python shopping.py shopping.csv`
 
-## Credits
-
-[*Luis Sanchez*][linkedin] 2021.
-
 ## Acknowledgements
 
 Project and images from the course [CS50's Introduction to Artificial Intelligence with Python 2020][cs50 ai] from HarvardX.
 
 Data set provided by [Sakar, C.O., Polat, S.O., Katircioglu, M. et al. Neural Comput & Applic (2018)][dataset].
+
+## Credits
+
+[*Luis Sanchez*][linkedin] 2021.
 
 [cs50 lecture]: https://www.youtube.com/watch?v=E4M_IQG0d9g
 [linkedin]: https://www.linkedin.com/in/luis-sanchez-13bb3b189/
