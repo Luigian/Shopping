@@ -44,6 +44,14 @@ Now we can train our model on the data set and see if we can predict whether onl
 
 ## Implementation
 
+First, open up shopping.csv, the data set provided to you for this project. You can open it in a text editor, but you may find it easier to understand visually in a spreadsheet application like Microsoft Excel, Apple Numbers, or Google Sheets.
+
+There are about 12,000 user sessions represented in this spreadsheet: represented as one row for each user session. The first six columns measure the different types of pages users have visited in the session: the Administrative, Informational, and ProductRelated columns measure how many of those types of pages the user visited, and their corresponding _Duration columns measure how much time the user spent on any of those pages. The BounceRates, ExitRates, and PageValues columns measure information from Google Analytics about the page the user visited. SpecialDay is a value that measures how closer the date of the user’s session is to a special day (like Valentine’s Day or Mother’s Day). Month is an abbreviation of the month the user visited. OperatingSystems, Browser, Region, and TrafficType are all integers describing information about the user themself. VisitorType will take on the value Returning_Visitor for returning visitors and some other string value for non-returning visitors. Weekend is TRUE or FALSE depending on whether or not the user is visiting on a weekend.
+
+Perhaps the most important column, though, is the last one: the Revenue column. This is the column that indicates whether the user ultimately made a purchase or not: TRUE if they did, FALSE if they didn’t. This is the column that we’d like to learn to predict (the “label”), based on the values for all of the other columns (the “evidence”).
+
+Next, take a look at shopping.py. The main function loads data from a CSV spreadsheet by calling the load_data function and splits the data into a training and testing set. The train_model function is then called to train a machine learning model on the training data. Then, the model is used to make predictions on the testing data set. Finally, the evaluate function determines the sensitivity and specificity of the model, before the results are ultimately printed to the terminal.
+
 There are two Python files in this project: `crossword.py` and `generate.py`. 
 
 The first file defines two classes, `Variable` (to represent a variable in a crossword puzzle) and `Crossword` (to represent the puzzle itself). The `Crossword` class requires two values to create a new crossword puzzle: a `structure_file` that defines the structure of the puzzle and a `words_file` that defines a list of words to use for the vocabulary of the puzzle. Three examples of each of these files can be found in the `data` directory.
@@ -58,13 +66,13 @@ In `generate.py`, we define a class `CrosswordCreator` that we’ll use to solve
 
 ## Usage
 
-**To install Pillow and Pygame:**
+**To install Scikit-learn:**
 
-* Inside the `crossword` directory: `pip3 install -r requirements.txt`
+* Inside the `shopping` directory: `pip3 install scikit-learn`
 
-**To generate crossword puzzles:** 
+**To train and test a model to predict online shopping purchases:** 
 
-* Inside the `crossword` directory: `python generate.py data/structure1.txt data/words1.txt output.png`
+* Inside the `shopping` directory: `python shopping.py shopping.csv`
 
 ## Credits
 
