@@ -80,15 +80,13 @@ The `evaluate` function accepts a list of labels (the true labels for the users 
 
 - `sensitivity` is a floating-point value from `0` to `1` representing the “true positive rate”: the proportion of actual positive labels that were accurately identified.
 
----------------------
-specificity should be a floating-point value from 0 to 1 representing the “true negative rate”: the proportion of actual negative labels that were accurately identified.
-You may assume each label will be 1 for positive results (users who did go through with a purchase) or 0 for negative results (users who did not go through with a purchase).
-You may assume that the list of true labels will contain at least one positive label and at least one negative label.
-You should not modify anything else in shopping.py other than the functions the specification calls for you to implement, though you may write additional functions and/or import other Python standard library modules. You may also import numpy or pandas or anything from scikit-learn, if familiar with them, but you should not use any other third-party Python modules. You should not modify shopping.csv.
+- `specificity` is a floating-point value from `0` to `1` representing the “true negative rate”: the proportion of actual negative labels that were accurately identified.
+
+We assume that the list of true labels will contain at least one positive label and at least one negative label.
 
 ## Resources
 
-* [Optimization - Lecture 3 - CS50's Introduction to Artificial Intelligence with Python 2020][cs50 lecture]
+* [Learning - Lecture 4 - CS50's Introduction to Artificial Intelligence with Python 2020][cs50 lecture]
 
 ## Usage
 
@@ -100,15 +98,14 @@ You should not modify anything else in shopping.py other than the functions the 
 
 * Inside the `shopping` directory: `python shopping.py shopping.csv`
 
-## Credits
+## Acknowledgements
 
 [*Luis Sanchez*][linkedin] 2021.
 
 Project and images from the course [CS50's Introduction to Artificial Intelligence with Python 2020][cs50 ai] from HarvardX.
+Data set provided by [Sakar, C.O., Polat, S.O., Katircioglu, M. et al. Neural Comput & Applic (2018)][dataset].
 
-[cs50 lecture]: https://youtu.be/qK46ET1xk2A?t=3070
+[cs50 lecture]: https://www.youtube.com/watch?v=E4M_IQG0d9g
 [linkedin]: https://www.linkedin.com/in/luis-sanchez-13bb3b189/
 [cs50 ai]: https://cs50.harvard.edu/ai/2020/
-
-
-
+[dataset]: https://link.springer.com/article/10.1007/s00521-018-3523-0
